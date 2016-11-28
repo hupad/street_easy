@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  url: mysql://b84fbdfe6cc756:ea5e63e5@us-cdbr-iron-east-04.cleardb.net/heroku_1c9928819faf91c?reconnect=true
   database: street_easy_production
   username: street_easy
   password: <%= ENV['STREET_EASY_DATABASE_PASSWORD'] %>
