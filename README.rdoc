@@ -4,15 +4,11 @@
 
 * Rails Version - 4.2.5
 
-* Database creation 
-  ``` 
+* Database creation  
     rake db:migrate 
-  ```
 
 * Data Import
-  ``` 
     rake data:import('/path/to/file.json')
-  ```
 
 * Restart rails - rails s
 
