@@ -4,11 +4,15 @@
 
 * Rails Version - 4.2.5
 
-* Database creation - rake db:migrate
+* Database creation 
+  ``` 
+    rake db:migrate 
+  ```
 
-* How to run the test suite
-
-* Data Import - rake data:import('/path/to/file.json')
+* Data Import
+  ``` 
+    rake data:import('/path/to/file.json')
+  ```
 
 * Restart rails - rails s
 
