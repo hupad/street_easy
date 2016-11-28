@@ -1,8 +1,10 @@
 == README
 
-* Ruby version - ruby 2.1.10
+* Ruby version
+    ruby 2.1.10
 
-* Rails Version - 4.2.5
+* Rails Version 
+    4.2.5
 
 * Database creation  
     rake db:migrate 
@@ -10,6 +12,8 @@
 * Data Import
     rake data:import('/path/to/file.json')
 
-* Restart rails - rails s
+* Restart rails
+    rails s
 
-* Reports - http://localhost:3000/reports/agents/topfive
+* Reports
+    http://localhost:3000/reports/agents/topfive
