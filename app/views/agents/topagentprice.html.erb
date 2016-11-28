@@ -1,0 +1,35 @@
+<div class="container">
+	<h1>Top 5 agents by average sale price per Brokerage</h1>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>
+					Full Name
+				</th>
+				<th>
+					Brokerage
+				</th>
+				<th>
+					Average Price
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @top_agent_by_price_per_broker.each do |agent| %>
+				<tr>
+					<td>
+						<%= agent.full_name %>
+					</td>
+					<td>
+						<%= agent.brokerage %>
+					</td>
+					<td>
+						<%= number_to_currency(agent.avg_price) %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+</div>
