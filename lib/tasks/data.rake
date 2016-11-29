@@ -4,7 +4,8 @@ namespace :data do
 
     desc "Setup sample data from a sample json file"
     task :setup, [:file] => :environment do |t, args|
-        puts "Given File #{args[:file]} \n"
+
+        abort("There is no file specified. No data to import!") unless args[:file]
 
         file = args[:file]
         json = open(file).read
