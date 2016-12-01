@@ -1,8 +1,8 @@
 class AgentReport
 	def get_top_five_agents_by_average_sale_price
 		@top_five_agents = Sale.joins(:agent)
-								.select(" concat(agents.first_name,' ', agents.last_name) as full_name ,AVG(sales.price) as avg_price ")
-								.group('full_name')
+								.select("concat(agents.first_name,' ', agents.last_name) as full_name ,AVG(sales.price) as avg_price, agents.id")
+								.group('agents.id')
 								.order('avg_price DESC')
 								.limit(5)
 								.to_a
