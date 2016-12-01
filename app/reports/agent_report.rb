@@ -10,8 +10,8 @@ class AgentReport
 
 	def get_top_five_agents_by_rating
 		@top_five_agents_by_rating = Review.joins(:agent)
-											.select(" concat(agents.first_name, ' ', agents.last_name) as full_name , AVG(reviews.rating) as avg_rating ")
-											.group('full_name')
+											.select("concat(agents.first_name, ' ', agents.last_name) as full_name , AVG(reviews.rating) as avg_rating, agents.id")
+											.group('agents.id')
 											.order('avg_rating DESC')
 											.limit(5)
 											.to_a
@@ -21,8 +21,8 @@ class AgentReport
 		@top_agent_by_broker = Agent.select('T.*')
 									.from( 
 										Agent.joins(:reviews)
-										.select("concat( agents.first_name,' ', agents.last_name) as full_name, brokerage, AVG(reviews.rating) as avg_rating")
-										.group('full_name'), :T
+										.select("concat( agents.first_name,' ', agents.last_name) as full_name, brokerage, AVG(reviews.rating) as avg_rating, agents.id")
+										.group('agents.id'), :T
 									).group(:brokerage)
 									.order('avg_rating DESC')
 	end
@@ -31,8 +31,8 @@ class AgentReport
 		@top_agent_by_broker = Agent.select('T.*')
 									.from( 
 										Agent.joins(:sales)
-										.select("concat( agents.first_name,' ', agents.last_name) as full_name, brokerage, AVG(sales.price) as avg_price")
-										.group('full_name'), :T
+										.select("concat( agents.first_name,' ', agents.last_name) as full_name, brokerage, AVG(sales.price) as avg_price, agents.id")
+										.group('agents.id'), :T
 									).group(:brokerage)
 									.order('avg_price DESC')
 	end
